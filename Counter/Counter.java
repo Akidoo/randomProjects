@@ -12,11 +12,11 @@ public class Counter {
 		.toInstant().toEpochMilli(); //Converts date to milliseconds
 		
 		Calendar cal = Calendar.getInstance();
-		cal.set(2023, 1, 18); //Year, month and day of month
+		cal.set(2023, 1, 19); //Year, month and day of month
 		Date date2 = cal.getTime(); //Anchor date
 		long millis2 = date2
-		
 		.toInstant().toEpochMilli(); //Anchor date in milliseconds
+		
 		long count = millis1-millis2;
 		count = count/86400000;
 		
