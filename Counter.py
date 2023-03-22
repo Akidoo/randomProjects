@@ -1,4 +1,4 @@
-#Will try recreating this in java another day
+#so like i recreated it lmao (check Counter.java)
 from datetime import date
 
 d0 = date(2023, 2, 19)
