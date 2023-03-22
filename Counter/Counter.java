@@ -18,7 +18,7 @@ public class Counter {
 		.toInstant().toEpochMilli(); //Anchor date in milliseconds
 		
 		long count = millis1-millis2;
-		count = count/86400000;
+		count = count/86400000; //convert back to days
 		
 		System.out.println(count + " days");
 	
