@@ -43,6 +43,7 @@ public class loginGUI implements ActionListener {
 		
 		panel.setLayout(null);
 		JLabel userLabel = new JLabel("User");
+		userLabel.setForeground(Color.GRAY);
 		userLabel.setBounds(10, 20, 80, 25);
 		panel.add(userLabel);
 		
@@ -51,6 +52,7 @@ public class loginGUI implements ActionListener {
 		panel.add(userText);
 		
 		passwordLabel = new JLabel("Password");
+		passwordLabel.setForeground(Color.GRAY);
 		passwordLabel.setBounds(10, 50, 80, 25);
 		panel.add(passwordLabel);
 		
