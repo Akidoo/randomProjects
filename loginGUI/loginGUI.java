@@ -1,4 +1,6 @@
 import java.net.URL;
+import java.awt.*;
+import javax.swing.*;
 import java.net.MalformedURLException;
 import java.awt.Desktop;
 import javax.swing.JFrame;
@@ -18,6 +20,7 @@ public class loginGUI implements ActionListener {
 	
 	String[] cmd = {"bash","-c","google-chrome https://newskit.social/blog/posts/homepageindex"};
 	
+	private static JPanel panel;
 	private static JLabel userLabel;
 	private static JTextField userText;
 	private static JLabel passwordLabel;
@@ -25,12 +28,14 @@ public class loginGUI implements ActionListener {
 	private static JButton button;
 	private static JLabel success;
 	private static JLabel failure;
+	private static JButton dModeToggle;
 	
 	public static void main (String[] args) {
 		
-		JPanel panel = new JPanel();
+		panel = new JPanel();
+		panel.setBackground(Color.white);
 		JFrame frame = new JFrame();
-		frame.setSize(350,200);
+		frame.setSize(550,400);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(panel);
 		
@@ -55,6 +60,11 @@ public class loginGUI implements ActionListener {
 		button.setBounds(140, 80, 80, 25);
 		button.addActionListener(new loginGUI());
 		panel.add(button);
+		
+		dModeToggle = new JButton("Toggle Dark Mode");
+		dModeToggle.setBounds(300, 50, 165, 25);
+		dModeToggle.addActionListener(new loginGUI());
+		panel.add(dModeToggle);
 		
 		success = new JLabel("");
 		success.setBounds(10, 110, 300, 25);
@@ -83,6 +93,7 @@ public class loginGUI implements ActionListener {
 			else{
 				failure.setText("Incorrect username or password");
 			}
+			
 			//URI uri = URI.create("https://newskit.social/blog/posts/homepageindex");
 			 //java.awt.Desktop.getDesktop().browse(uri);
 			//String myUrl = "https://newskit.social/blog/posts/homepageindex";
@@ -98,5 +109,14 @@ public class loginGUI implements ActionListener {
 			
 			
 		}
+		
+	public void actionPerformed2(ActionEvent arg0) {
+		if(arg0.getSource() == dModeToggle) {
+			
+			panel.setBackground(Color.black);
+			}
+		
+		}
+		
 }
 
