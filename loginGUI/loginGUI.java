@@ -30,6 +30,7 @@ public class loginGUI implements ActionListener {
 	private static JLabel failure;
 	private static JButton dModeToggle;
 	
+	
 	public static void main (String[] args) {
 		
 		panel = new JPanel();
