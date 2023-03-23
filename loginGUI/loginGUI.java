@@ -76,10 +76,12 @@ public class loginGUI implements ActionListener {
 		panel.add(LModeToggle);
 		
 		success = new JLabel("");
+		success.setForeground(Color.GRAY);
 		success.setBounds(10, 110, 300, 25);
 		panel.add(success);
 		
 		failure = new JLabel("");
+		failure.setForeground(Color.GRAY);
 		failure.setBounds(10,110,300,25);
 		panel.add(failure);
 		
