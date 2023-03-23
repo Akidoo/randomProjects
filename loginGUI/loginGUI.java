@@ -29,6 +29,7 @@ public class loginGUI implements ActionListener {
 	private static JLabel success;
 	private static JLabel failure;
 	private static JButton dModeToggle;
+	private static JButton LModeToggle;
 	
 	
 	public static void main (String[] args) {
@@ -67,6 +68,11 @@ public class loginGUI implements ActionListener {
 		dModeToggle.addActionListener(new loginGUI());
 		panel.add(dModeToggle);
 		
+		LModeToggle = new JButton("Toggle Light Mode");
+		LModeToggle.setBounds(300, 20, 165, 25);
+		LModeToggle.addActionListener(new loginGUI());
+		panel.add(LModeToggle);
+		
 		success = new JLabel("");
 		success.setBounds(10, 110, 300, 25);
 		panel.add(success);
@@ -78,8 +84,8 @@ public class loginGUI implements ActionListener {
 		frame.setVisible(true);
 	}
 	@Override
-public void actionPerformed(ActionEvent e) {
-    if (e.getSource() == button) {
+		public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == button) {
         // login button was clicked
         String user = userText.getText();
         String password = passwordText.getText();
@@ -101,6 +107,9 @@ public void actionPerformed(ActionEvent e) {
         // dark mode toggle button was clicked
         actionPerformed2(e);
     }
+     else if (e.getSource() == LModeToggle) {
+        // dark mode toggle button was clicked
+        actionPerformed3(e);
 }
 
 			
@@ -117,7 +126,7 @@ public void actionPerformed(ActionEvent e) {
 			//}
 			
 			
-			
+		}
 		
 		
 	public void actionPerformed2(ActionEvent arg0) {
@@ -127,6 +136,13 @@ public void actionPerformed(ActionEvent e) {
 			}
 		
 		}
+		public void actionPerformed3(ActionEvent arg0) {
+		if(arg0.getSource() == LModeToggle) {
+			
+			panel.setBackground(Color.white);
+			}
 		
-}
+	}
+}		
+
 
