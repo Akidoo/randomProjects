@@ -24,6 +24,7 @@ public class loginGUI implements ActionListener {
 	private static JPasswordField passwordText;
 	private static JButton button;
 	private static JLabel success;
+	private static JLabel failure;
 	
 	public static void main (String[] args) {
 		
@@ -59,6 +60,10 @@ public class loginGUI implements ActionListener {
 		success.setBounds(10, 110, 300, 25);
 		panel.add(success);
 		
+		failure = new JLabel("");
+		failure.setBounds(10,110,300,25);
+		panel.add(failure);
+		
 		frame.setVisible(true);
 	}
 	@Override
@@ -69,10 +74,14 @@ public class loginGUI implements ActionListener {
 		
 		if(user.equals("testUser") && password.equals("password")){
 			success.setText("Successfully logged in!");
+			
 			//URL link = new URL("https://newskit.social/blog/posts/homepageindex");
 			
 			//Desktop desk = Desktop.getDesktop();
 			//desk.browse(link.toURI());
+			}
+			else{
+				failure.setText("Incorrect username or password");
 			}
 			//URI uri = URI.create("https://newskit.social/blog/posts/homepageindex");
 			 //java.awt.Desktop.getDesktop().browse(uri);
