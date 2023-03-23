@@ -78,22 +78,31 @@ public class loginGUI implements ActionListener {
 		frame.setVisible(true);
 	}
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		String user = userText.getText();
-		String password = passwordText.getText();
-		System.out.println(user + ", " + password);
+public void actionPerformed(ActionEvent e) {
+    if (e.getSource() == button) {
+        // login button was clicked
+        String user = userText.getText();
+        String password = passwordText.getText();
+        System.out.println(user + ", " + password);
 		
-		if(user.equals("testUser") && password.equals("password")){
-			success.setText("Successfully logged in!");
+        if(user.equals("testUser") && password.equals("password")){
+            success.setText("Successfully logged in!");
 			
-			//URL link = new URL("https://newskit.social/blog/posts/homepageindex");
+            //URL link = new URL("https://newskit.social/blog/posts/homepageindex");
 			
-			//Desktop desk = Desktop.getDesktop();
-			//desk.browse(link.toURI());
-			}
-			else{
-				failure.setText("Incorrect username or password");
-			}
+            //Desktop desk = Desktop.getDesktop();
+            //desk.browse(link.toURI());
+        }
+        else {
+            failure.setText("Incorrect username or password");
+        }
+    }
+    else if (e.getSource() == dModeToggle) {
+        // dark mode toggle button was clicked
+        actionPerformed2(e);
+    }
+}
+
 			
 			//URI uri = URI.create("https://newskit.social/blog/posts/homepageindex");
 			 //java.awt.Desktop.getDesktop().browse(uri);
@@ -109,7 +118,7 @@ public class loginGUI implements ActionListener {
 			
 			
 			
-		}
+		
 		
 	public void actionPerformed2(ActionEvent arg0) {
 		if(arg0.getSource() == dModeToggle) {
