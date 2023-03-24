@@ -98,10 +98,13 @@ public class loginGUI implements ActionListener {
         if(user.equals("testUser") && password.equals("password")){
             success.setText("Successfully logged in!");
 			
-            //URL link = new URL("https://newskit.social/blog/posts/homepageindex");
-			
-            //Desktop desk = Desktop.getDesktop();
-            //desk.browse(link.toURI());
+             try {
+        String yUrl = "https://newskit.social/blog/posts/homepageindex";
+        URL myURL = new URL(yUrl);
+        openWebpage(myURL);
+    } catch (MalformedURLException f) {
+        f.printStackTrace();
+    }
         }
         else {
             failure.setText("Incorrect username or password");
@@ -112,7 +115,7 @@ public class loginGUI implements ActionListener {
         actionPerformed2(e);
     }
      else if (e.getSource() == LModeToggle) {
-        // dark mode toggle button was clicked
+        // light mode toggle button was clicked
         actionPerformed3(e);
 }
 
@@ -147,6 +150,27 @@ public class loginGUI implements ActionListener {
 			}
 		
 	}
+	public static boolean openWebpage(URI uri) {
+    Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+    if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+        try {
+            desktop.browse(uri);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    return false;
+}
+
+public static boolean openWebpage(URL url) {
+    try {
+        return openWebpage(url.toURI());
+    } catch (URISyntaxException e) {
+        e.printStackTrace();
+    }
+    return false;
+}
 }		
 
 
