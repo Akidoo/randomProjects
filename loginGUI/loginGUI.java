@@ -18,8 +18,6 @@ import java.io.IOException;
 
 public class loginGUI implements ActionListener {
 	
-	String[] cmd = {"bash","-c","google-chrome https://newskit.social/blog/posts/homepageindex"};
-	
 	int darkMode = 0;
 	private static JPanel panel;
 	private static JLabel userLabel;
@@ -32,7 +30,8 @@ public class loginGUI implements ActionListener {
 	private static JButton dModeToggle;
 	private static JButton LModeToggle;
 	private static JFrame frame;
-	
+	private static JPanel rickpanel;
+	private static JFrame rickframel;
 	
 	public static void main (String[] args) {
 		
@@ -107,25 +106,25 @@ public class loginGUI implements ActionListener {
     } catch (MalformedURLException f) {
         f.printStackTrace();
     }
-    panel = new JPanel();
+    rickpanel = new JPanel();
     if(darkMode == 0){
-		panel.setBackground(Color.white);
+		rickpanel.setBackground(Color.white);
 	}
 	else if (darkMode == 1) {
-		panel.setBackground(Color.black);
+		rickpanel.setBackground(Color.black);
 		}
-		JFrame frame = new JFrame();
-		frame.setSize(550,400);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.add(panel);
+		JFrame rickframe = new JFrame();
+		rickframe.setSize(550,400);
+		rickframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		rickframe.add(rickpanel);
 		
-		panel.setLayout(null);
-		JLabel userLabel = new JLabel("bro got rickrolled in 2023 :skull:");
-		userLabel.setForeground(Color.GRAY);
-		userLabel.setBounds(10, 20, 80, 100);
-		panel.add(userLabel);
+		rickpanel.setLayout(null);
+		JLabel rickLabel = new JLabel("bro got rickrolled in 2023 :skull:");
+		rickLabel.setForeground(Color.GRAY);
+		rickLabel.setBounds(10, 20, 300, 100);
+		rickpanel.add(rickLabel);
 		
-		frame.setVisible(true);
+		rickframe.setVisible(true);
     
         }
         else {
@@ -136,25 +135,13 @@ public class loginGUI implements ActionListener {
         // dark mode toggle button was clicked
         actionPerformed2(e);
         darkMode = 1;
+  
     }
      else if (e.getSource() == LModeToggle) {
         // light mode toggle button was clicked
         actionPerformed3(e);
 }
 
-			
-			//URI uri = URI.create("https://newskit.social/blog/posts/homepageindex");
-			 //java.awt.Desktop.getDesktop().browse(uri);
-			//String myUrl = "https://newskit.social/blog/posts/homepageindex";
-			//Runtime rt = Runtime.getRuntime();
-			//String url = "https://newskit.social/blog/posts/homepageindex";
-			//try {
-				//rt.exec("runso url.so,FileProtocolHandler " + url);
-			//}
-			//catch (IOException f) {
-				//f.printStackTrace();
-			//}
-			
 			
 		}
 		
@@ -163,6 +150,7 @@ public class loginGUI implements ActionListener {
 		if(arg0.getSource() == dModeToggle) {
 			
 			panel.setBackground(Color.black);
+			darkMode = 1;
 			}
 		
 		}
