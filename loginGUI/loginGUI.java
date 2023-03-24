@@ -20,6 +20,7 @@ public class loginGUI implements ActionListener {
 	
 	String[] cmd = {"bash","-c","google-chrome https://newskit.social/blog/posts/homepageindex"};
 	
+	int darkMode = 0;
 	private static JPanel panel;
 	private static JLabel userLabel;
 	private static JTextField userText;
@@ -30,6 +31,7 @@ public class loginGUI implements ActionListener {
 	private static JLabel failure;
 	private static JButton dModeToggle;
 	private static JButton LModeToggle;
+	private static JFrame frame;
 	
 	
 	public static void main (String[] args) {
@@ -105,6 +107,26 @@ public class loginGUI implements ActionListener {
     } catch (MalformedURLException f) {
         f.printStackTrace();
     }
+    panel = new JPanel();
+    if(darkMode == 0){
+		panel.setBackground(Color.white);
+	}
+	else if (darkMode == 1) {
+		panel.setBackground(Color.black);
+		}
+		JFrame frame = new JFrame();
+		frame.setSize(550,400);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.add(panel);
+		
+		panel.setLayout(null);
+		JLabel userLabel = new JLabel("bro got rickrolled in 2023 :skull:");
+		userLabel.setForeground(Color.GRAY);
+		userLabel.setBounds(10, 20, 80, 100);
+		panel.add(userLabel);
+		
+		frame.setVisible(true);
+    
         }
         else {
             failure.setText("Incorrect username or password");
@@ -113,6 +135,7 @@ public class loginGUI implements ActionListener {
     else if (e.getSource() == dModeToggle) {
         // dark mode toggle button was clicked
         actionPerformed2(e);
+        darkMode = 1;
     }
      else if (e.getSource() == LModeToggle) {
         // light mode toggle button was clicked
