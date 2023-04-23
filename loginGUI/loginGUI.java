@@ -142,6 +142,7 @@ public class loginGUI implements ActionListener {
      else if (e.getSource() == LModeToggle) {
         // light mode toggle button was clicked
         actionPerformed3(e);
+        darkMode = false;
 }
 
 			
@@ -160,6 +161,7 @@ public class loginGUI implements ActionListener {
 		if(arg0.getSource() == LModeToggle) {
 			
 			panel.setBackground(Color.white);
+			darkMode = false;
 			}
 		
 	}
