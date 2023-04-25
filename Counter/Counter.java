@@ -19,9 +19,9 @@ public class Counter {
 		long millis2 = date2
 		.toInstant().toEpochMilli(); //Anchor date in milliseconds
 		
-		long countMonths = millis1-millis2;
+		long countMonths = millis2-millis1;
 		countMonths = countMonths/monthsConverter;
-		System.out.println(countMonths*-1 + " months");
+		System.out.println(countMonths -1  + " months");
 		
 		System.out.println("or");
 		
