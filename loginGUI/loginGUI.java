@@ -16,9 +16,11 @@ import java.net.URISyntaxException;
 import java.io.IOException;
 
 
+
+
 public class loginGUI implements ActionListener {
 	
-	int darkMode = 0;
+	boolean darkMode = false;
 	private static JPanel panel;
 	private static JLabel userLabel;
 	private static JTextField userText;
@@ -107,10 +109,10 @@ public class loginGUI implements ActionListener {
         f.printStackTrace();
     }
     rickpanel = new JPanel();
-    if(darkMode == 0){
+    if(darkMode = false){
 		rickpanel.setBackground(Color.white);
 	}
-	else if (darkMode == 1) {
+	else if (darkMode = true) {
 		rickpanel.setBackground(Color.black);
 		}
 		JFrame rickframe = new JFrame();
@@ -134,12 +136,13 @@ public class loginGUI implements ActionListener {
     else if (e.getSource() == dModeToggle) {
         // dark mode toggle button was clicked
         actionPerformed2(e);
-        darkMode = 1;
+        darkMode = true;
   
     }
      else if (e.getSource() == LModeToggle) {
         // light mode toggle button was clicked
         actionPerformed3(e);
+        darkMode = false;
 }
 
 			
@@ -150,7 +153,7 @@ public class loginGUI implements ActionListener {
 		if(arg0.getSource() == dModeToggle) {
 			
 			panel.setBackground(Color.black);
-			darkMode = 1;
+			darkMode = true;
 			}
 		
 		}
@@ -158,6 +161,7 @@ public class loginGUI implements ActionListener {
 		if(arg0.getSource() == LModeToggle) {
 			
 			panel.setBackground(Color.white);
+			darkMode = false;
 			}
 		
 	}
